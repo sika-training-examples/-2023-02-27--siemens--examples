@@ -1,18 +1,15 @@
 # .gitlab-ci.yml
 
-stages:
-  - build
-  - test
+image: sikalabs/ci
 
-build:
-  stage: build
-  # script: echo Run build ...
-  script: echo Run build ... && false
-  when: manual
-  # allow_failure: false
+test1:
+  script: '[ "$(slu random int --max 2)" == "0" ]'
+  retry: 2
 
-test:
-  stage: test
-  script: echo test
-  needs:
-    - build
+test2:
+  script: '[ "$(slu random int --max 2)" == "0" ]'
+  retry: 2
+
+test3:
+  script: '[ "$(slu random int --max 2)" == "0" ]'
+  retry: 2
