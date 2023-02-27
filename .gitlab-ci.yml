@@ -10,7 +10,7 @@ variables:
 
 build:
   stage: build
-  image: nodejs:16-slim
+  image: node:16-slim
   tags:
     - cool-stuff-only
   script:
