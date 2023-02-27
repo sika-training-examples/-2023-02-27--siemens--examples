@@ -6,4 +6,4 @@ test1:
   script:
     - echo asdfasdf
     - env | grep MY_
-    - cat /builds/EW4Bzer2/0/example/ondrejsika.tmp/MY_GROUP_FILE
+    - cat $MY_GROUP_FILE
