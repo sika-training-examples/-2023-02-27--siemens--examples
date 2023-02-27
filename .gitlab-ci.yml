@@ -1,65 +1,19 @@
-# .gitlab-ci.yml
-
-image: sikalabs/ci
-
 stages:
-  - build
-  - test
+  - a
+  - b
 
-variables:
-  GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
-
-
-build:
-  stage: build
-  tags:
-    - cool-stuff-only
+a:
+  stage: a
   script:
-    - slu generate-files tree -c 40 -p out
+    - export MY_FOO=foo
+    - MY_BAR
+    - env | MY_ > .env
   artifacts:
     paths:
-      - out
+      - .env
 
-build2:
-  stage: build
-  tags:
-    - cool-stuff-only
+b:
+  stage: b
   script:
-    - slu generate-files tree -c 40 -p out2
-  artifacts:
-    paths:
-      - out2
-
-build32:
-  stage: build
-  tags:
-    - cool-stuff-only
-  script:
-    - slu generate-files tree -c 40 -p out3
-  artifacts:
-    paths:
-      - out3
-
-test:
-  stage: test
-  tags:
-    - cool-stuff-only
-  script:
-    - echo out/index.html
-  dependencies: []
-
-
-test2:
-  stage: test
-  tags:
-    - cool-stuff-only
-  script:
-    - echo out/index.html
-  dependencies: []
-
-test4:
-  stage: test
-  tags:
-    - cool-stuff-only
-  script:
-    - echo out/index.html
+    - export $(cat .env | xargs)
+    - env | MY_
