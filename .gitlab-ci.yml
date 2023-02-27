@@ -1,10 +1,6 @@
-# .gitlab-ci.yml
-test:
-  image: ondrejsika/pytest
+
+job:
   script:
-    - pytest --junitxml=report.xml || true
-  after_script:
-    - cat report.xml
-  artifacts:
-    paths:
-      - report.xml
+    - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE
