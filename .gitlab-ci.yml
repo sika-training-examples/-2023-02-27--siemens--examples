@@ -9,4 +9,3 @@ job:
       - .yarn-cache
   script:
     - yarn install --frozen-lockfile --cache-folder .yarn-cache --prefer-offline
-    - yarn build
