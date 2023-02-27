@@ -1,25 +1,10 @@
-# .gitlab-ci.yml
 
-image: golang:1.19
+variables:
+  BASE_HOST: dev.company.com
+  HOST: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.$BASE_HOST
 
-build:
-  parallel:
-    matrix:
-      - GOOS:
-          - linux
-          - darwin
-          - windows
-        FOO:
-          - 1
-          - 2
-          - 3
-        BAR:
-          - a
-          - b
-          - c
-        BAZ:
-          - xxx
-          - yyy
-          - zzz
-  script:
-    - echo $GOOS $FOO $BAR $BAZ
+deploy:
+  script: echo 'Deploy!'
+  environment:
+    name: $CI_COMMIT_REF_SLUG
+    url: https://$HOST
