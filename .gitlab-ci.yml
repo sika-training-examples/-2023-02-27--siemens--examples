@@ -4,6 +4,10 @@ stages:
   - build
   - test
 
+build2:
+  stage: build
+  script: echo Run build ... 
+
 build:
   stage: build
   # script: echo Run build ...
