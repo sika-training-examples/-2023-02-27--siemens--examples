@@ -1,5 +1,7 @@
 include:
-  - https://gitlab.sikademo.com/example/ci/-/raw/main/simple-ci.yml
+  - project: 'example/ci'
+    ref: main                                      # Git branch
+    file: simple-ci.yml'
 
 extra:
   stage: .post
