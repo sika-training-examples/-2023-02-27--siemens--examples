@@ -6,7 +6,7 @@ a:
   stage: a
   script:
     - export MY_FOO=foo
-    - MY_BAR=bar
+    - export MY_BAR=bar
     - env | grep MY_ > .env
   artifacts:
     paths:
