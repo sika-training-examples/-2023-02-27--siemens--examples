@@ -1,15 +1,13 @@
 job1:
-  before_script:
-      - e
-  script:
-    - echo deploy!
-    - echo test!
-    - echo cleanup!
-
-job2:
   script:
     - echo deploy!
     - echo test!
   after_script:
-    - echo cleanup!
-    - rgre
+    - echo $CI_JOB_STATUS
+
+job2:
+  script:
+    - echo deploy!
+    - echo test! && false
+  after_script:
+    - echo $CI_JOB_STATUS
