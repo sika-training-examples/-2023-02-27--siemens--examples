@@ -3,10 +3,10 @@ Build A:
   script: echo Build A ...
   rules:
     - changes:
-        - a/**
+        - a/**/*
 
 Build B:
   script: echo Build B ...
   rules:
     - changes:
-        - b/**
+        - b/**/*
