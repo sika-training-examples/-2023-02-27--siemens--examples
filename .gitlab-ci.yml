@@ -17,5 +17,9 @@ build:
           - a
           - b
           - c
+        BAZ:
+          - xxx
+          - yyy
+          - zzz
   script:
-    - echo $GOOS $FOO $BAR
+    - echo $GOOS $FOO $BAR $BAZ
