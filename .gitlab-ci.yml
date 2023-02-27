@@ -9,12 +9,5 @@ build:
           - linux
           - darwin
           - windows
-        GOARCH:
-          - amd64
-          - arm64
-          - x86
-  artifacts:
-    paths:
-      - hello-${GOOS}-${GOARCH}
   script:
-    - go build -o hello-${GOOS}-${GOARCH} main.go
+    - echo $GOOS
