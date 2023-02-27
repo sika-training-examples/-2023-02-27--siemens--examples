@@ -1,12 +1,6 @@
-
-Build A:
-  script: echo Build A ...
+job:
+  script: echo "Hello, Rules!"
   rules:
-    - changes:
-        - a/**/*
-
-Build B:
-  script: echo Build B ...
-  rules:
-    - changes:
-        - b/**/*
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_COMMIT_BEFORE_SHA == 0000000000000000000000000000000000000000
+      when: never
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
