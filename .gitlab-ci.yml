@@ -2,8 +2,16 @@
 
 image: sikalabs/ci
 
+stages:
+    - a
+    - b
+
 test1:
+  stage: a
   script:
-    - echo asdfasdf
-    - env | grep MY_
-    - cat $MY_GROUP_FILE
+    - export FOO=1
+
+test2:
+  stage: b
+  script:
+    - echo $FOO
