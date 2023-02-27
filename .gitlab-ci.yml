@@ -6,6 +6,9 @@ stages:
     - a
     - b
 
+variables:
+  FOO: xxx
+
 test1:
   stage: a
   script:
