@@ -3,4 +3,4 @@
 image: sikalabs/ci
 
 test1:
-  script: env
+  script: echo http://$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.k8s.sikademo.com
