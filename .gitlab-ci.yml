@@ -4,3 +4,7 @@ job2:
   script:
     - echo Hello World!
     - echo Ahoj Svete!
+cool job:
+  tags:
+    - cool-stuff-only
+  script: echo cool stuff
