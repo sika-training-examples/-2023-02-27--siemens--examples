@@ -9,4 +9,8 @@ build:
   # script: echo Run build ...
   script: echo Run build ... && false
   when: manual
-  allow_failure: false
+  # allow_failure: false
+
+test:
+  stage: test
+  script: echo test
