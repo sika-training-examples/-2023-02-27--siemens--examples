@@ -3,4 +3,4 @@
 image: sikalabs/ci
 
 test1:
-  script: echo docker tag image:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_SOURCE
+  script: echo docker tag image:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
