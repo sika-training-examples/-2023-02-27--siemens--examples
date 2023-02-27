@@ -1,2 +1,6 @@
 include:
   - https://gitlab.sikademo.com/example/ci/-/raw/main/simple-ci.yml
+
+extra:
+  stage: .post
+  script: echo xxx
