@@ -9,6 +9,7 @@ deploy:
     name: $CI_COMMIT_REF_SLUG
     url: https://example.com
     on_stop: stop
+    auto_stop_in: 1 minute
 
 stop:
   variables:
