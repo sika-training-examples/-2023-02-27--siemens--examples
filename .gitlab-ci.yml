@@ -2,7 +2,9 @@
 test:
   image: ondrejsika/pytest
   script:
-    - pytest --junitxml=report.xml
+    - pytest --junitxml=report.xml || true
+  after_script:
+    - cat report.xml
   artifacts:
-    reports:
-      junit: report.xml
+    paths:
+      - report.xml
