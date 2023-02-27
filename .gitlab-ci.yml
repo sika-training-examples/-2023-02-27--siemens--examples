@@ -9,3 +9,4 @@ build:
   # script: echo Run build ...
   script: echo Run build ... && false
   when: manual
+  allow_failure: false
