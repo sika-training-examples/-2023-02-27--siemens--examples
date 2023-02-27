@@ -4,16 +4,25 @@ stages:
   - build
   - test
 
+variables:
+  GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
+
+
 build:
   stage: build
+  image: nodejs:16-slim
+  tags:
+    - cool-stuff-only
   script:
-    - mkdir -p out
-    - echo '<h1>Hello World!</h1>' > out/index.html
+    - yarn
+    - yarn run build
   artifacts:
     paths:
       - out
 
 test:
   stage: test
+  tags:
+    - cool-stuff-only
   script:
     - cat out/index.html
