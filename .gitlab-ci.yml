@@ -13,3 +13,5 @@ build:
   # script: echo Run build ...
   script: echo Run build ... && false
   allow_failure: true
+  after_script:
+    - echo $CI_JOB_STATUS
