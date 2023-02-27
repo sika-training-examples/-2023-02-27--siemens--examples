@@ -1,6 +1,6 @@
 job:
   tags:
-    - cool-jobs-only
+    - cool-stuff-only
   cache:
     key: ${CI_COMMIT_REF_SLUG}
     paths:
