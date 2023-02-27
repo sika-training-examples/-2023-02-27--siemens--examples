@@ -7,7 +7,7 @@ a:
   script:
     - export MY_FOO=foo
     - MY_BAR
-    - env | MY_ > .env
+    - env | grep MY_ > .env
   artifacts:
     paths:
       - .env
@@ -16,4 +16,4 @@ b:
   stage: b
   script:
     - export $(cat .env | xargs)
-    - env | MY_
+    - env | grep MY_
