@@ -3,4 +3,4 @@
 image: sikalabs/ci
 
 test1:
-  script: '[ "$(slu random int --max 2)" == "0" ]'
+  script: env
