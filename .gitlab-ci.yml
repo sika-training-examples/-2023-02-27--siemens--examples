@@ -14,7 +14,7 @@ build:
   tags:
     - cool-stuff-only
   script:
-    - yarn
+    - yarn install --frozen-lockfile --cache-folder .yarn-cache --prefer-offline
     - yarn run build
   artifacts:
     paths:
