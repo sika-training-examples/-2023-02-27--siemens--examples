@@ -1,5 +1,7 @@
 # .gitlab-ci.yml
 
+image: sikalabs/ci
+
 stages:
   - build
   - test
@@ -10,19 +12,51 @@ variables:
 
 build:
   stage: build
-  image: node:16-slim
   tags:
     - cool-stuff-only
   script:
-    - yarn install --frozen-lockfile --cache-folder .yarn-cache --prefer-offline
-    - yarn run build
+    - slu generate-files tree -c 1000 -p out
   artifacts:
     paths:
       - out
+
+build2:
+  stage: build
+  tags:
+    - cool-stuff-only
+  script:
+    - slu generate-files tree -c 1000 -p out2
+  artifacts:
+    paths:
+      - out2
+
+build32:
+  stage: build
+  tags:
+    - cool-stuff-only
+  script:
+    - slu generate-files tree -c 1000 -p out3
+  artifacts:
+    paths:
+      - out3
 
 test:
   stage: test
   tags:
     - cool-stuff-only
   script:
-    - cat out/index.html
+    - echo out/index.html
+
+test2:
+  stage: test
+  tags:
+    - cool-stuff-only
+  script:
+    - echo out/index.html
+
+test4:
+  stage: test
+  tags:
+    - cool-stuff-only
+  script:
+    - echo out/index.html
