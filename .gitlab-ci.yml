@@ -21,9 +21,5 @@ build:
           - xxx
           - yyy
           - zzz
-        xxx:
-          - xxx
-          - yyy
-          - zzz
   script:
-    - echo $GOOS $FOO $BAR $BAZ $xxx
+    - echo $GOOS $FOO $BAR $BAZ
