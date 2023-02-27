@@ -4,14 +4,8 @@ stages:
   - build
   - test
 
-build2:
-  stage: build
-  script: echo Run build ... 
-
 build:
   stage: build
   # script: echo Run build ...
   script: echo Run build ... && false
-  allow_failure: true
-  after_script:
-    - echo $CI_JOB_STATUS
+  when: manual
