@@ -9,5 +9,13 @@ build:
           - linux
           - darwin
           - windows
+        FOO:
+          - 1
+          - 2
+          - 3
+        BAR:
+          - a
+          - b
+          - c
   script:
-    - echo $GOOS
+    - echo $GOOS $FOO $BAR
