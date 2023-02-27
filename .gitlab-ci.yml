@@ -1,23 +1,8 @@
-stages:
-  - build
-  - test
-  - deploy
-
-build:
-  stage: build
-  script: echo build
-  rules:
-    - if: $CI_COMMIT_BRANCH
-    - if: $CI_MERGE_REQUEST_ID
-
-test:
-  stage: test
-  script: echo test
-  rules:
-    - if: $CI_MERGE_REQUEST_ID
-
-deploy:
-  stage: deploy
-  script: echo deploy
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+job:
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - now
+  script:
+    - date >> now
+    - cat now
