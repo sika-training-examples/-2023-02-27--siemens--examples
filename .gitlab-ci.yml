@@ -1,19 +1,8 @@
-stages:
-  - a
-  - b
-
-a:
-  stage: a
+# .gitlab-ci.yml
+test:
+  image: ondrejsika/pytest
   script:
-    - export MY_FOO=foo
-    - export MY_BAR=bar
-    - env | grep MY_ > .env
+    - pytest --junitxml=report.xml
   artifacts:
-    paths:
-      - .env
-
-b:
-  stage: b
-  script:
-    - export $(cat .env | xargs)
-    - env | grep MY_
+    reports:
+      junit: report.xml
