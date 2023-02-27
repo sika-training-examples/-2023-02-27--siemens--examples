@@ -1,7 +1,7 @@
 include:
   - project: 'example/ci'
     ref: main                                      # Git branch
-    file: simple-ci.yml'
+    file: simple-ci.yml
 
 extra:
   stage: .post
