@@ -10,7 +10,7 @@ job:
     - /kaniko/executor
       --context .
       --dockerfile ./Dockerfile
-      --destination $CI_REGISTRY_IMAGE
+      --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
       --cache=true
       --cache-dir .kaniko-cache
       --cache-repo $CI_REGISTRY_IMAGE/cache
